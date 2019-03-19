@@ -8,7 +8,7 @@ class SecondPage extends React.Component {
     return (
       <div>
         <h1>Second page</h1>
-        <Link href="/">&larr; home</Link>
+        <Link href="/"><a>&larr; home</a></Link>
       </div>
     );
   }
