@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.3",
     "polished": "^3.0.3",
@@ -14,9 +15,8 @@
     "styled-system": "^4.0.5"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production node server.js"
   }
 }
