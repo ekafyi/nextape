@@ -21,7 +21,7 @@ class IndexPage extends Component {
 
   componentDidMount() {
     let artistId;
-    const artistQuery = 'asdasdah';
+    let artistQuery = 'pavement';
 
     // define current component, to make `setState` work
     // https://www.freecodecamp.org/forum/t/react-question-cannot-read-property-setstate-of-undefined/69620/3
@@ -31,8 +31,8 @@ class IndexPage extends Component {
     const spotifyApi = new SpotifyWebApi();
     spotifyApi.setAccessToken('BQCvTyAcKBDDoT_aIVLDDR046o-6AERQeHpux1b2AAOstOGh0AItzmPrTcGhPI6i0PkBjqX96WkMjJTmqmIrxUso_ZP1Icbd3tolI_cYaDt88Jp0JMM_Pc8yzq774vm0SPeSj_yows5NOaVer3xp3wbMTFMHf39-');
 
-    spotifyApi.searchArtists(artistQuery)
-    // ============================
+    spotifyApi.searchArtists('"' + artistQuery + '"')
+    // ===
     // QUERY ONE ↑
     // search artist by query
     // ============================
@@ -59,7 +59,7 @@ class IndexPage extends Component {
         return false;
       }
     })
-    // ============================
+    // ===
     // QUERY TWO ↑
     // get artist top track
     // ============================
@@ -79,7 +79,7 @@ class IndexPage extends Component {
 
       return spotifyApi.getArtistRelatedArtists(artistId)
     })
-    // ============================
+    // ===
     // QUERY THREE ↑
     // get related artists
     // ============================
@@ -98,7 +98,7 @@ class IndexPage extends Component {
         // QUERY FOUR ↓
         // get each related artist's tracks
         // ============================
-        spotifyApi.searchTracks(`artist:\"${relatedArtistsData.artists[i].name}\"`)
+        spotifyApi.searchTracks('artist:"' + relatedArtistsData.artists[i].name + '"')
         .then(function(trackResponse) {
           console.log('4. Related Artist Tracks ✔');
           // get one random track 
@@ -148,8 +148,10 @@ class IndexPage extends Component {
           relatedTracks.length ? (
             <React.Fragment>
               <h2>{artist.name}</h2>
-              {artist.images && (
+              {artist.images ? (
                 <img src={artist.images[1].url} />
+              ) : (
+                <div>no image</div>
               )}
               <hr/>
               <section>
