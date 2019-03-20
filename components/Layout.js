@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 
 const Layout = ({ children }) => (
-	<React.Fragment>
+	<div className="NxLayout">
     <Head>
       <title>Nextape | quick mixtape using Spotify Web API</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -16,8 +16,19 @@ const Layout = ({ children }) => (
     <main role="main">
       {children}
     </main>
+    <footer role="contentinfo">
+      Proof of concept app by Eka | <a href="https://github.com/ekaonthenet/nextape" rel="noopener external">source code on Github</a>
+    </footer>
 
 		<style jsx>{`
+      .NxLayout {
+        min-height: calc(100vh - 1rem);
+        display: flex;
+        flex-direction: column;
+      }
+      .NxLayout>main {
+        flex-grow: 1;
+      }
 		`}</style>
 		<style global jsx>
 			{`
@@ -26,7 +37,7 @@ const Layout = ({ children }) => (
 				}
 			`}
 		</style>
-	</React.Fragment>
+	</div>
 );
 
 export default Layout;
