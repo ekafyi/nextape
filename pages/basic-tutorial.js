@@ -1,11 +1,12 @@
 import React from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
-import Error from 'next/error';
+import StoryList from '../components/BasicTutStoryList';
 
 
-class IndexPage extends React.Component {
+class BasicTutorialPage extends React.Component {
 
   // v1 
   // https://medium.com/crowdbotics/how-to-build-a-hacker-news-app-with-react-and-next-js-5fe0c5a64c12
@@ -32,26 +33,28 @@ class IndexPage extends React.Component {
 	render() {
     const { stories } = this.props;
 		return (
-			<div>
-				<h1>Hacker News Clone</h1>
-				<div>
-					{stories.map(story => (
-						<h3 key={story.id}>{story.title}</h3>
-					))}
-				</div>
-			</div>
+      <React.Fragment>
+        <Head>
+          <title>Hacker News Clone - Basic Tutorial</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
+  			<div>
+  				<h1>Hacker News Clone</h1>
+  				<StoryList stories={stories} />
+  			</div>
+      </React.Fragment>
 		);
 	}
 }
 
 // v3
 // https://davidyeiser.com/tutorial/how-to-create-blog-airtable-api-next-js
-// IndexPage.getInitialProps = async (context) => {
+// BasicTutorialPage.getInitialProps = async (context) => {
 //   const res = await fetch('https://node-hnapi.herokuapp.com/news?page=1')
 //   const stories = await res.json()
 //   return { stories }
 // }
 
-// IndexPage.propTypes = {};
+// BasicTutorialPage.propTypes = {};
 
-export default IndexPage;
+export default BasicTutorialPage;
