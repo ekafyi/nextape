@@ -10,8 +10,12 @@ function getRandomItemInArray(array = [], length = 0) {
 
 class IndexPage extends Component {
   static async getInitialProps({ res }) {
-    const accessToken = res.locals.accessToken;
-    return { accessToken };
+    if (res) {
+      const accessToken = res.locals.accessToken;
+      return { accessToken };
+    } else {
+      return {}
+    }
   }
 
   constructor(props) {
