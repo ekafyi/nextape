@@ -13,9 +13,11 @@ app
     const server = express()
 
     
+    // ============================
+    // Get Spotify access token
     // https://glitch.com/~spotify-client-credentials
+    // ============================
 
-    // init Spotify API wrapper
     var SpotifyWebApi = require('spotify-web-api-node');
 
     // The API object we'll use to interact with the API
@@ -27,33 +29,30 @@ app
     // Using the Client Credentials auth flow, authenticate our app
     spotifyApi.clientCredentialsGrant()
       .then(function(data) {
-        console.log('Access token retrieval successful', data.body)
-        console.log('=====')
-        console.log('=====')
-        console.log('=====')
-        console.log('=====')
-        console.log('=====')
-      
-        // Save the access token so that it's used in future calls
-        spotifyApi.setAccessToken(data.body['access_token']);
+        console.log('Token retrieval successful', data.body)
+        const accessToken = data.body['access_token']
 
+        // Save the access token so that it's used in future calls
+        // (not used)
+        spotifyApi.setAccessToken(accessToken);
+
+        // send access token to server
+        // !TODO make better Promise chaining
+        server.get('*', (req, res) => {
+          res.locals.accessToken = accessToken
+          return handle(req, res)
+        })
       }, function(err) {
         console.log('Something went wrong when retrieving an access token', err.message);
+        // !TODO
+        // render specific view if access token retrieval fails (ie. ask user to reload)
       });
 
-
-
-
-
-
-
-    server.get('*', (req, res) => {
-      return handle(req, res)
-    })
+    // ============================
 
     server.listen(3000, err => {
       if (err) throw err
-      console.log('> Ready on http://localhost:3000')
+      console.log('> Ready on http://localhost:3000 (Express server)')
     })
   })
   .catch(ex => {

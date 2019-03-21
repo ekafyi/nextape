@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'next/router';
 import Layout from '../components/Layout';
-import fetch from 'isomorphic-unfetch';
 import * as SpotifyWebApi from 'spotify-web-api-js';
 
 function getRandomItemInArray(array = [], length = 0) {
@@ -11,6 +10,12 @@ function getRandomItemInArray(array = [], length = 0) {
 
 
 class IndexPage extends Component {
+
+  static async getInitialProps({res}) {
+    const accessToken = res.locals.accessToken
+    return { accessToken }
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -31,12 +36,14 @@ class IndexPage extends Component {
 
     // initialize spotify-web-api-js
     const spotifyApi = new SpotifyWebApi();
-    // spotifyApi.setAccessToken('BQB4zC9ZCo77sqX12ohM5S_l_9y3y-dTHFUBt-8s-w1hPurtvws8Y6D6iajMQ75bUQYdfnMYGt8dBSwSvLOLgYDLj6MhCcvrcymbJm8rwnywHQO2bzicQJRdof6mWbIuJ09SF1sHDkJje-a0gXwF4rZ9g5wTOhtW');
 
-    // load data if artist query is provided
-    if (this.props.router.query.artist) {
-      artistQuery = encodeURIComponent(this.props.router.query.artist);
-      console.log('query', artistQuery);
+    // load data if artist query AND access token exists
+    if (this.props.router.query.artist && this.props.accessToken) {
+      // set access token
+      spotifyApi.setAccessToken(this.props.accessToken);
+
+      artistQuery = this.props.router.query.artist;
+      console.log('query: ', artistQuery);
 
       spotifyApi.searchArtists('"' + artistQuery + '"')
       // ===
