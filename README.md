@@ -1,9 +1,18 @@
 # Nextape
 
-Enter an artist, get a quick mixtape using the Spotify Web API.
+_Enter an artist, get a mixtape_
 
-My mini project to learn NextJS in as short time as possible. 
+🚧 Work in progress 🚧
 
-Work in progress: Let's see where this goes...
+![screenshot](https://i.imgur.com/1eEimaTl.png)
 
-@ekaonthenet
+- NextJS
+- Spotify Web API
+- Deployed to Now (under construction)
+
+Clone and run: `yarn dev`
+
+Search for your favourite artist by adding __artist__ parameter in the URL, eg:
+
+- http://localhost:3000/?artist=pavement
+- http://localhost:3000/?artist=dara-puspita
