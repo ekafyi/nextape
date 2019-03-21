@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'next/router';
 import Layout from '../components/Layout';
+import fetch from 'isomorphic-unfetch';
 import * as SpotifyWebApi from 'spotify-web-api-js';
 
 function getRandomItemInArray(array = [], length = 0) {
@@ -30,7 +31,7 @@ class IndexPage extends Component {
 
     // initialize spotify-web-api-js
     const spotifyApi = new SpotifyWebApi();
-    spotifyApi.setAccessToken('BQB4zC9ZCo77sqX12ohM5S_l_9y3y-dTHFUBt-8s-w1hPurtvws8Y6D6iajMQ75bUQYdfnMYGt8dBSwSvLOLgYDLj6MhCcvrcymbJm8rwnywHQO2bzicQJRdof6mWbIuJ09SF1sHDkJje-a0gXwF4rZ9g5wTOhtW');
+    // spotifyApi.setAccessToken('BQB4zC9ZCo77sqX12ohM5S_l_9y3y-dTHFUBt-8s-w1hPurtvws8Y6D6iajMQ75bUQYdfnMYGt8dBSwSvLOLgYDLj6MhCcvrcymbJm8rwnywHQO2bzicQJRdof6mWbIuJ09SF1sHDkJje-a0gXwF4rZ9g5wTOhtW');
 
     // load data if artist query is provided
     if (this.props.router.query.artist) {

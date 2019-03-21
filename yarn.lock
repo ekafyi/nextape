@@ -956,6 +956,10 @@ async-sema@2.1.4:
   dependencies:
     double-ended-queue "2.1.0-0"
 
+asynckit@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
+
 atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
@@ -1309,6 +1313,12 @@ color-name@1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
 
+combined-stream@^1.0.6:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.7.tgz#2d1d24317afb8abe95d6d2c0b07b57813539d828"
+  dependencies:
+    delayed-stream "~1.0.0"
+
 commander@^2.19.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
@@ -1321,7 +1331,7 @@ commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
-component-emitter@^1.2.1:
+component-emitter@^1.2.0, component-emitter@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
 
@@ -1373,6 +1383,10 @@ cookie-signature@1.0.6:
 cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+
+cookiejar@^2.1.0:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.2.tgz#dd8a235530752f988f9a0844f3fc589e3111125c"
 
 copy-concurrently@^1.0.0:
   version "1.0.5"
@@ -1543,6 +1557,10 @@ del@^2.2.0:
     pinkie-promise "^2.0.0"
     rimraf "^2.2.8"
 
+delayed-stream@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
+
 delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
@@ -1577,6 +1595,10 @@ diffie-hellman@^5.0.0:
 domain-browser@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
+
+dotenv@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-7.0.0.tgz#a2be3cd52736673206e8a85fb5210eea29628e7c"
 
 double-ended-queue@2.1.0-0:
   version "2.1.0-0"
@@ -1776,6 +1798,10 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
+extend@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
+
 extglob@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/extglob/-/extglob-2.0.4.tgz#ad00fe4dc612a9232e8718711dc5cb5ab0285543"
@@ -1868,6 +1894,18 @@ flush-write-stream@^1.0.0:
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
+
+form-data@^2.3.1:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.3.3.tgz#dcce52c05f644f298c6a7ab936bd724ceffbf3a6"
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.6"
+    mime-types "^2.1.12"
+
+formidable@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.1.tgz#70fb7ca0290ee6ff961090415f4b3df3d2082659"
 
 forwarded@~0.1.2:
   version "0.1.2"
@@ -2517,7 +2555,7 @@ merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
 
-methods@~1.1.2:
+methods@^1.1.1, methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
@@ -2550,7 +2588,7 @@ mime-db@~1.38.0:
   version "1.38.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.38.0.tgz#1a2aab16da9eb167b49c6e4df2d9c68d63d8e2ad"
 
-mime-types@~2.1.18:
+mime-types@^2.1.12, mime-types@~2.1.18:
   version "2.1.22"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.22.tgz#fe6b355a190926ab7698c9a0556a11199b2199bd"
   dependencies:
@@ -2559,6 +2597,10 @@ mime-types@~2.1.18:
 mime@1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
+
+mime@^1.4.1:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
 
 mime@^2.3.1:
   version "2.4.0"
@@ -3226,6 +3268,10 @@ qs@6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
+qs@^6.5.1:
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.6.0.tgz#a99c0f69a8d26bf7ef012f871cdabb0aee4424c2"
+
 querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
@@ -3307,7 +3353,7 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@~2.3.6:
+"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.5, readable-stream@^2.3.6, readable-stream@~2.3.6:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
@@ -3710,6 +3756,12 @@ spotify-web-api-js@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/spotify-web-api-js/-/spotify-web-api-js-1.2.0.tgz#edfbbcf5a2727c1873c5a310a40f8f1f2b4ecb8a"
 
+spotify-web-api-node@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/spotify-web-api-node/-/spotify-web-api-node-4.0.0.tgz#55f060975220cdac18efc0e781f84130b12004c0"
+  dependencies:
+    superagent "^3.7.0"
+
 ssri@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
@@ -3857,6 +3909,21 @@ stylis-rule-sheet@0.0.10, stylis-rule-sheet@^0.0.10:
 stylis@3.5.4, stylis@^3.5.0:
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.4.tgz#f665f25f5e299cf3d64654ab949a57c768b73fbe"
+
+superagent@^3.7.0:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.8.3.tgz#460ea0dbdb7d5b11bc4f78deba565f86a178e128"
+  dependencies:
+    component-emitter "^1.2.0"
+    cookiejar "^2.1.0"
+    debug "^3.1.0"
+    extend "^3.0.0"
+    form-data "^2.3.1"
+    formidable "^1.2.0"
+    methods "^1.1.1"
+    mime "^1.4.1"
+    qs "^6.5.1"
+    readable-stream "^2.3.5"
 
 supports-color@^5.3.0, supports-color@^5.5.0:
   version "5.5.0"
